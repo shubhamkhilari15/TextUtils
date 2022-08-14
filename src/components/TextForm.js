@@ -5,8 +5,7 @@ export default function TextForm(props) {
   const OnUpperCase = () => {
     let newText=text.toUpperCase()
     setText(newText);
-    console.log('hello clicked me');
-    
+    props.showAlert("Convert To UpperCase","success");
   };
   const setTextValue = (event) => {
     setText(event.target.value);
@@ -14,21 +13,17 @@ export default function TextForm(props) {
   const OnLowerCase = () => {
     let newText=text.toLowerCase()
     setText(newText);
-    console.log('hello clicked me');
+    props.showAlert("Convert To LowerCase","success");
   };
   const ClearText=()=>{
     setText("");
+    props.showAlert("Text Cleared","success");
   }
   const CopyText=()=>{
-    console.log('value from text state='+text);
 let cptext=document.getElementById("myBox");
-console.log('cptext='+cptext);
-let cctext=cptext;
-console.log('cctext'+cctext);
-   // cptext.select();
-text.select();
+    cptext.select();
     navigator.clipboard.writeText(cptext.value);
-
+    props.showAlert("Text Copied","success");
   }
   const [text, setText] = useState("");
   return (
