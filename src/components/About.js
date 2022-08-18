@@ -1,37 +1,10 @@
-// import React, { useState } from "react";
-import "./About.css";
 export default function About(props) {
-  let style={
-    color:props.mode==='dark'?'white':'#377376',
-    backgroundColor:props.mode==='dark'?'#377376':'white',
-    border:'1px solid',
-    borderColor:props.mode==='dark'?'white':'#377376'
-  }
-  // const [style, Setstyle] = useState({
-  //   color: "#377376",
-  //   backgroundColor: "white",
-  //   border: "1px solid #377376",
-  // });
-  // const [mode, Setmode] = useState("Enable Dark Mode");
-  // const EnableDark = () => {
-  //   if(style.color==='#377376'){
-  //     Setstyle({
-  //       color: "white",
-  //       backgroundColor: "#377376",
-  //       border: "1px solid white",
-  //     });
-  //     Setmode("Disable Dark Mode");
-  //   }
-  //   else{
-  //       Setstyle({
-  //           color: "#377376",
-  //           backgroundColor: "white",
-  //           border: "1px solid #377376",
-  //         });
-  //         Setmode("Enable Dark Mode");
-  //   }
-  // };
-
+  let style = {
+    color: props.mode === "dark" ? "white" : "#377376",
+    backgroundColor: props.mode === "dark" ? "#377376" : "white",
+    border: "1px solid",
+    borderColor: props.mode === "dark" ? "white" : "#377376",
+  };
   return (
     <div className="container" style={style}>
       <h1 className="my-3">About Us</h1>
@@ -76,7 +49,7 @@ export default function About(props) {
               aria-controls="collapseTwo"
               style={style}
             >
-            Free To Use
+              Free To Use
             </button>
           </h2>
           <div
@@ -91,7 +64,7 @@ export default function About(props) {
               control the overall appearance, as well as the showing and hiding
               via CSS transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the 
+              about any HTML can go within the
             </div>
           </div>
         </div>
