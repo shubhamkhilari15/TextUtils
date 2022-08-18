@@ -20,9 +20,9 @@ export default function TextForm(props) {
     props.showAlert("Text Cleared","success");
   }
   const CopyText=()=>{
-let cptext=document.getElementById("myBox");
-    cptext.select();
-    navigator.clipboard.writeText(cptext.value);
+// let cptext=document.getElementById("myBox");
+    // cptext.select();
+    navigator.clipboard.writeText(text);
     props.showAlert("Text Copied","success");
   }
   const [text, setText] = useState("");
@@ -40,15 +40,15 @@ let cptext=document.getElementById("myBox");
           style={{backgroundColor:props.mode==='dark'?'#023f40':'white',color:props.mode==='light'?'#023f40':'white'}}
         ></textarea>
       </div>
-      <button className="btn btn-primary" onClick={OnUpperCase}>
+      <button disabled={text.length===0}className="btn btn-primary m-1" onClick={OnUpperCase}>
         UPPER CASE
       </button>
-      <button className="btn btn-primary m-3" onClick={OnLowerCase}>lower CASE</button>
-      <button className="btn btn-primary m-3" onClick={ClearText}>Clear Text</button>
-      <button className="btn btn-primary m-3" onClick={CopyText}>Copy Text</button>
+      <button disabled={text.length===0} className="btn btn-primary m-1" onClick={OnLowerCase}>lower CASE</button>
+      <button disabled={text.length===0} className="btn btn-primary m-1" onClick={ClearText}>Clear Text</button>
+      <button disabled={text.length===0} className="btn btn-primary m-1" onClick={CopyText}>Copy Text</button>
       <div className="container">
       <h4>Text Summary</h4>
-      <p>***no. of words in string ={text.split(' ').length}.*** no. of character ={text.length}***</p>
+      <p>***no. of words in string ={text.split(' ').filter((element)=>{ return element.length!==0}).length}.*** no. of character ={text.length}***</p>
       <h4>Preview</h4>
       <p>{text.length>0?text:"enter your text to preview"}</p>
 
